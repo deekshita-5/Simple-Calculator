@@ -1,0 +1,256 @@
+body,html {
+	background-image: url("https://cdn6.f-cdn.com/contestentries/190907/14882145/5521446131e46_thumb900.jpg");
+	background-size: cover;
+}
+:root {
+	--body-bg-color: #e0e5ec;
+	--bg-color: #e0e5ec;
+	--primary-font-color: rgba(144, 152, 168, 1);
+	--secondary-font-color: rgba(51, 64, 89, 1);
+	--soft-high-light: rgba(255, 255, 255, 0.43);
+	--dark-high-light: rgba(217, 210, 200, 0.51);
+}
+
+[data-theme="dark"] {
+	--body-bg-color: #181818;
+	--bg-color: #131419;
+	--primary-font-color: #c7c7c7;
+	--secondary-font-color: #03a9f4;
+	--soft-high-light: rgba(255, 255, 255, 0.05);
+	--dark-high-light: rgba(0, 0, 0, 0.51);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--body-bg-color);
+	color: var(--primary-font-color);
+}
+
+.calculator {
+	background: #E9F8F9;
+	color: var(--primary-font-color);
+}
+
+.display {
+	box-shadow: 4px 4px 14px 0 var(--dark-high-light),
+		-4px -4px 14px 0 var(--soft-high-light),
+		inset 4px 4px 5px 0 var(--dark-high-light),
+		inset -4px -4px 5px 0 var(--soft-high-light);
+	background-color: white;
+}
+.displayCalc {
+	box-shadow: 4px 4px 14px 0 var(--dark-high-light),
+		-4px -4px 14px 0 var(--soft-high-light),
+		inset 4px 4px 5px 0 var(--dark-high-light),
+		inset -4px -4px 5px 0 var(--soft-high-light);
+	background-color: white;
+}
+.neumorphic {
+	box-shadow: 6px 6px 16px 0 var(--dark-high-light),
+		-6px -6px 16px 0 var(--soft-high-light);
+	border-radius: 50%;
+	transition: 0.1s all ease-in-out;
+	border: 1px solid var(--soft-high-light);
+	cursor: pointer;
+}
+
+.neumorphic:hover {
+	box-shadow: inset 5px 5px 5px 0 var(--dark-high-light),
+		inset -5px -5px 5px 0 var(--soft-high-light);
+	color: var(--secondary-font-color);
+}
+
+/*
+  GRID LAYOUT & NON NEUMORPHIC 
+*/
+
+body {
+	font-family: "Odibee Sans";
+	margin: 0;
+}
+
+.display,.displayCalc {
+	border-radius: 12px;
+	transition: 0.1s all ease-in-out;
+	height: 60px;
+	line-height: 60px;
+	text-align: right;
+	padding-right: 20px;
+	width: 100%;
+	font-size: 32px;
+	letter-spacing: 4px;
+}
+span
+{
+	background-color: #E3DFFD;
+}
+.calculator {
+	box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	grid-template-areas: "toggle toggle toggle toggle""display display display display""c signed percent divide""seven eight nine times""four five six minus""one two three plus""zero zero decimal equals";
+	place-content: center;
+	gap: 25px;
+	border-radius: 20px;
+	padding: 50px 40px 40px 40px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 92%;
+	/* Largura que vc quer, mais o padding lateral 40 + 40 */
+	max-width: calc(315px + 80px);
+}
+
+.c,
+.signed,
+.percent,
+.divide,
+.seven,
+.eight,
+.nine,
+.times,
+.four,
+.five,
+.six,
+.minus,
+.one,
+.two,
+.three,
+.plus,
+.zero,
+.decimal,
+.equals {
+	text-align: center;
+	height: 60px;
+	width: 60px;
+
+	display: grid;
+	place-content: center;
+}
+
+.zero {
+	width: 100%;
+	border-radius: 12px;
+}
+
+.toggle {
+	grid-area: toggle;
+}
+
+.display {
+	grid-area: display;
+}
+
+.c {
+	grid-area: c;
+}
+
+.signed {
+	grid-area: signed;
+}
+
+.percent {
+	grid-area: percent;
+}
+
+.divide {
+	grid-area: divide;
+}
+
+.seven {
+	grid-area: seven;
+}
+
+.eight {
+	grid-area: eight;
+}
+
+.nine {
+	grid-area: nine;
+}
+
+.times {
+	grid-area: times;
+}
+
+.four {
+	grid-area: four;
+}
+
+.five {
+	grid-area: five;
+}
+
+.six {
+	grid-area: six;
+}
+
+.minus {
+	grid-area: minus;
+}
+
+.one {
+	grid-area: one;
+}
+
+.two {
+	grid-area: two;
+}
+
+.three {
+	grid-area: three;
+}
+
+.plus {
+	grid-area: plus;
+}
+
+.zero {
+	grid-area: zero;
+}
+
+.decimal {
+	grid-area: decimal;
+}
+
+.equals {
+	grid-area: equals;
+}
+
+
+/*Media queries this makes the website responsive*/
+@media (max-width: 425px) {
+	.calculator {
+		padding: 25px 20px 20px 20px;
+		gap: 15px;
+	}
+
+	.c,
+	.signed,
+	.percent,
+	.divide,
+	.seven,
+	.eight,
+	.nine,
+	.times,
+	.four,
+	.five,
+	.six,
+	.minus,
+	.one,
+	.two,
+	.three,
+	.plus,
+	.decimal,
+	.equals {
+		height: 70px;
+		width: 70px;
+	}
+}
